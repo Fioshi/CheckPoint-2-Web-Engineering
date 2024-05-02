@@ -43,7 +43,9 @@ export class ClienteComponent {
   }
 
   listar(): void {
-    this.clientes = this.clienteService.listar();
+    this.clienteService.listar().subscribe((item )=> {
+      this.clientes = item
+    });
   }
 
   ngOnInit(): void {
